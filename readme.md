@@ -29,6 +29,7 @@ Caso você tenha interesse em se aproximar da nossa Stack, usamos:
 - Vendor
 - GIT
 - Docker
+**Ps.:** Caso queira usar nosso ambiente docker, basta configurar as portas no docker-compose.yml e executar docker-compose up -d para subir a rede e os containers
 
 ## Como entregar o desafio?
 
@@ -37,4 +38,4 @@ Caso você tenha interesse em se aproximar da nossa Stack, usamos:
 3. Suba as alterações para o GitHub em um repositório público
 4. Nos mande por e-mail o link do repositório
 
-**Ps.:**  Caso precise de configuração para rodar o projeto após entregue, você precisa deixar claro todos os passos.
+**Ps.:** Caso precise de configuração para rodar o projeto após entregue, você precisa deixar claro todos os passos.
