@@ -22,7 +22,7 @@
                 <input type="text" name="pesquisa" placeholder="Pesquisar...">
             </form>
             <figure></figure>
-            <a class="sair" href="login.html">sair</a>
+            <a class="sair" href="login.php">sair</a>
         </header>
 
         <ul>
@@ -41,7 +41,7 @@
                 <div class="texto email">email@dominio.com.br</div>
                 <div class="texto data">10/10/2021</div>
                 <div class="texto status">Ativo</div>
-                <div class="editar"><a href="form.html"><img src="images/editar.svg"></a></div>
+                <div class="editar"><a href="form.php"><img src="images/editar.svg"></a></div>
                 <div class="deletar"><img src="images/deletar.svg"></div>
             </li>
             <li class="dado">
@@ -50,7 +50,7 @@
                 <div class="texto email">email@dominio.com.br</div>
                 <div class="texto data">10/10/2021</div>
                 <div class="texto status">Ativo</div>
-                <div class="editar"><a href="form.html"><img src="images/editar.svg"></a></div>
+                <div class="editar"><a href="form.php"><img src="images/editar.svg"></a></div>
                 <div class="deletar"><img src="images/deletar.svg"></div>
             </li>
             <li class="dado">
@@ -59,7 +59,7 @@
                 <div class="texto email">email@dominio.com.br</div>
                 <div class="texto data">10/10/2021</div>
                 <div class="texto status">Ativo</div>
-                <div class="editar"><a href="form.html"><img src="images/editar.svg"></a></div>
+                <div class="editar"><a href="form.php"><img src="images/editar.svg"></a></div>
                 <div class="deletar"><img src="images/deletar.svg"></div>
             </li>
             <li class="dado">
@@ -68,7 +68,7 @@
                 <div class="texto email">email@dominio.com.br</div>
                 <div class="texto data">10/10/2021</div>
                 <div class="texto status">Ativo</div>
-                <div class="editar"><a href="form.html"><img src="images/editar.svg"></a></div>
+                <div class="editar"><a href="form.php"><img src="images/editar.svg"></a></div>
                 <div class="deletar"><img src="images/deletar.svg"></div>
             </li>
         </ul>
@@ -77,7 +77,7 @@
             <a href="">Anterior</a>
             <a href="">Próxima</a>
         </div>
-        <a href="form.html" class="botao_add">Adicionar novo</a>
+        <a href="form.php" class="botao_add">Adicionar novo</a>
     </div>
 </body>
 

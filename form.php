@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/form.css">
 </head>
+
 <body>
     <div id="site">
         <header>
-            <a class="voltar" href="index.html"><img src="images/voltar.svg"></a>
+            <a class="voltar" href="index.php"><img src="images/voltar.svg"></a>
             <h1 class="total">Salvar novo usuário</h1>
             <figure></figure>
-            <a class="sair" href="login.html">sair</a>
+            <a class="sair" href="login.php">sair</a>
         </header>
         <form action="" class="cadastro">
             <div class="input">
@@ -75,4 +77,5 @@
         </form>
     </div>
 </body>
+
 </html>
