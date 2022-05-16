@@ -5,6 +5,7 @@
 ## Desafio Front-End
 
 **Proposta:** O principal objetivo deste desafio é testar o seu conhecimento em Desenvolvimento Back-end seguindo as boas práticas do desenvolvimento moderno.
+
 Você está livre para fazer qualquer alteração no projeto inicial.
 
 ## Requisitos - o que será avaliado?
@@ -29,6 +30,7 @@ Caso você tenha interesse em se aproximar da nossa Stack, usamos:
 - Vendor
 - GIT
 - Docker
+
 **Ps.:** Caso queira usar nosso ambiente docker, basta configurar as portas no docker-compose.yml e executar docker-compose up -d para subir a rede e os containers
 
 ## Como entregar o desafio?
