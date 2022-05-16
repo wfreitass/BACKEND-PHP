@@ -7,7 +7,7 @@ CREATE TABLE `usuario` (
   `uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nome` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cpf` bigint(11) UNSIGNED ZEROFILL NOT NULL,
-  `email` int(11) NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `senha` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `permissao` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `data_criacao` datetime NOT NULL,
