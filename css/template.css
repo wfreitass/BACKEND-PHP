@@ -35,19 +35,13 @@ body {
     flex-grow: 1;
     flex-basis: 0%;
 }
-#site > header p {
-    width: 100%;
-    color: #666;
-    line-height: 1.5em;
-    font-size: 1.4rem;
-    margin-top: 10px;
-}
 
 #site > header .busca {
-    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-grow: 1;
+    flex-basis: 0%;
 }
 #site > header .busca input {
     flex-grow: 1;
@@ -67,7 +61,7 @@ body {
 }
 #site > header a.sair {
     font-size: 1.4rem;
-    margin: 0 10px 0 20px;
+    margin: 0 10px;
     padding: 5px 10px;
     border-radius: 20px;
 }
