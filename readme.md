@@ -32,8 +32,9 @@ Caso você tenha interesse em se aproximar da nossa Stack, usamos:
 
 ## Como entregar o desafio?
 
-1. Crie um fork deste projeto
+1. Faça um clone do repositório
 2. Faça as devidas alterações
-3. Envie um PR para esse repositório
+3. Suba as alterações para o GitHub em um repositório público
+4. Nos mande por e-mail o link do repositório
 
 **Ps.:**  Caso precise de configuração para rodar o projeto após entregue, você precisa deixar claro todos os passos.
