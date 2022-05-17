@@ -16,7 +16,7 @@ Você está livre para fazer qualquer alteração no projeto inicial.
 - Segurança das informações;
 - Boas práticas;
 
-Tente usar o mínimo possível de coisas prontas como bibliotecas, frameworks e etc, o teste já é para ver seu conhecimento nas linguagens, quando mais código, mais podemos analisar.
+Tente usar o mínimo possível de coisas prontas como bibliotecas, frameworks e etc, o teste já é para ver seu conhecimento nas linguagens, quanto mais código, mais podemos analisar.
 
 ## Qual a nossa stack?
 
