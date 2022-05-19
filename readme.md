@@ -2,7 +2,7 @@
   <img src="https://www.marktclub.com.br/images/logo_marktclub.png" width="200" alt="Logo Markt Club">
 </p>
 
-## Desafio Front-End
+## Desafio Back-End
 
 **Proposta:** O principal objetivo deste desafio é testar o seu conhecimento em Desenvolvimento Back-end seguindo as boas práticas do desenvolvimento moderno.
 
