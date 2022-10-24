@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.marktclub.com.br/images/logo_marktclub.png" width="200" alt="Logo Markt Club">
+  <img src="https://markt.club/images/logo_marktclub.png" width="200" alt="Logo Markt Club">
 </p>
 
 ## Desafio Back-End
