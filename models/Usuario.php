@@ -53,24 +53,3 @@ class Usuario extends CRUD
         return  $usuario;
     }
 }
-
-// // Exemplo de uso:
-// // Supondo que você já tenha uma conexão com o banco de dados ($conexao) estabelecida:
-// $usuario = new Usuario($conexao);
-
-// // Usando métodos herdados da classe CRUD
-// $dadosUsuario = array(
-//     'nome' => 'João Silva',
-//     'email' => 'joao@example.com',
-//     'senha' => 'senha123',
-//     'idade' => 30
-// );
-
-// $usuario->criar($dadosUsuario);
-// $usuario->atualizar(1, $dadosUsuario);
-// $usuario->deletar(1);
-// $usuarios = $usuario->listar();
-
-// // Usando métodos específicos da classe Usuario
-// $usuarioEncontrado = $usuario->buscarPorEmail('joao@example.com');
-// $usuarioValidado = $usuario->validarCredenciais('joao@example.com', 'senha123');

@@ -17,12 +17,12 @@
     <div id="site">
         <header>
             <h1>USUÁRIOS</h1>
-            <form class="busca" action="">
+            <form class="busca" action="?action=pesquisa" method="post">
                 <i><img src="images/lupa.svg"></i>
                 <input type="text" name="pesquisa" placeholder="Pesquisar...">
             </form>
             <figure></figure>
-            <a class="sair" href="views/login.php">sair</a>
+            <a class="sair" href="views/login.php?action=logout">sair</a>
         </header>
         <ul>
             <li class="titulo">

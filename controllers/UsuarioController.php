@@ -7,20 +7,33 @@ class UsuarioController
     public function login()
     {
         if ($_POST) {
-
             $usuario = new Usuario();
             $usuario = $usuario->validarCredenciais($_POST['login'], $_POST['senha']);
             if (!$usuario) {
                 $mensagem = "Cedenciais Inválidas";
                 return header('Location: views/login.php');
             }
+            session_start();
+            $_SESSION['usuario'] = $usuario;
             return header('Location: index.php');
         }
         require 'views/login.php';
     }
 
+    public function logout()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+    }
+
     public function listarUsuarios()
     {
+        session_start();
+        if (!$_SESSION['usuario']) {
+            return header('Location: views/login.php');
+        }
+
         try {
             $paginaAtual = 1;
             if (isset($_GET['pagina'])) {
@@ -41,6 +54,10 @@ class UsuarioController
 
     public function cadastrarUsuario()
     {
+        session_start();
+        if (!$_SESSION['usuario']) {
+            return header('Location: views/login.php');
+        }
         if ($_POST) {
             try {
                 $usuario = new Usuario();
@@ -69,6 +86,10 @@ class UsuarioController
     public function excluirUsuario()
     {
         try {
+            session_start();
+            if (!$_SESSION['usuario']) {
+                return header('Location: views/login.php');
+            }
             $id = $_GET['id'];
             $usuario = new Usuario();
             $response = $usuario->deletar($id);
@@ -81,6 +102,10 @@ class UsuarioController
     public function editarUsuario()
     {
         try {
+            session_start();
+            if (!$_SESSION['usuario']) {
+                return header('Location: views/login.php');
+            }
             $id = $_GET['id'];
             $usuario = new Usuario();
             $usuario = $usuario->buscarPorId($id);
@@ -95,6 +120,25 @@ class UsuarioController
                 return header('Location: index.php');
             }
             require 'views/form.php';
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    public function pesquisa()
+    {
+        try {
+            $paginaAtual = 1;
+            if (isset($_GET['pagina'])) {
+                $paginaAtual = $_GET['pagina'];
+            }
+            $usuario = new Usuario();
+            $resultadosPorPagina = 3;
+            $total = $usuario->total();
+            $totalPaginas = ceil($total / $resultadosPorPagina);
+            $resultado = $usuario->pesquisar($paginaAtual, $resultadosPorPagina, $_POST['pesquisa']);
+
+            require 'views/list.php';
         } catch (Exception $e) {
             throw $e;
         }

@@ -35,6 +35,14 @@ switch ($action) {
         $controller->login();
         break;
 
+    case 'logout':
+        $controller->logout();
+        break;
+
+    case 'pesquisa':
+        $controller->pesquisa();
+        break;
+
     default:
         echo "Ação inválida.";
         break;

@@ -83,4 +83,13 @@ abstract class CRUD
         $sql = "SELECT * FROM {$this->tabela} LIMIT $resultadosPorPagina OFFSET {$offset}";
         return $this->conexao->query($sql);
     }
+
+    public function pesquisar($paginaAtual, $resultadosPorPagina, $texto)
+    {
+        $offset = ($paginaAtual - 1) * $resultadosPorPagina;
+
+        $sql = "SELECT * FROM {$this->tabela} WHERE nome LIKE '%" . $texto . "%' LIMIT $resultadosPorPagina OFFSET {$offset}";
+
+        return $this->conexao->query($sql);
+    }
 }
