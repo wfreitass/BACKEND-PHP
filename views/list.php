@@ -41,8 +41,12 @@
                     <div class="texto email"><?= $value['email'] ?></div>
                     <div class="texto data"><?= $value['data_criacao'] ?></div>
                     <div class="texto status"><?= $value['status'] ? "Ativado" : "Inativado" ?></div>
-                    <div class="editar"><a href="?action=editar&id=<?= $value['id'] ?>"><img src="images/editar.svg"></a></div>
-                    <div class="deletar"><a href="?action=excluir&id=<?= $value['id'] ?>"><img src="images/deletar.svg"></a></div>
+                    <?php if (in_array('usuario_add', $usuarioLogado['permissao'])) : ?>
+                        <div class="editar"><a href="?action=editar&id=<?= $value['id'] ?>"><img src="images/editar.svg"></a></div>
+                    <?php endif ?>
+                    <?php if (in_array('usuario_deletar', $usuarioLogado['permissao'])) : ?>
+                        <div class="deletar"><a href="?action=excluir&id=<?= $value['id'] ?>"><img src="images/deletar.svg"></a></div>
+                    <?php endif ?>
                 </li>
             <?php endwhile ?>
         </ul>
@@ -51,7 +55,9 @@
             <a href="?pagina=<?= $paginaAtual - 1 != 0 ?  $paginaAtual - 1 : $paginaAtual ?>">Anterior</a>
             <a href="?pagina=<?= $paginaAtual + 1 > $totalPaginas ? $paginaAtual : $paginaAtual + 1  ?>">Próxima</a>
         </div>
-        <a href="?action=cadastrar" class="botao_add">Adicionar novo</a>
+        <?php if (in_array('usuario_add', $usuarioLogado['permissao'])) : ?>
+            <a href="?action=cadastrar" class="botao_add">Adicionar novo</a>
+        <?php endif ?>
     </div>
     <script>
         function confirmarExclusao() {

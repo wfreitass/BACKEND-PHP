@@ -1,14 +1,11 @@
 <?php
 
-// require_once 'ConexaoSingleton.php';
-// require_once 'models/Usuario.php';
 require_once 'controllers/UsuarioController.php';
 
-// Roteamento
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $action = 'listar'; // Ação padrão é listar os usuários
+    $action = 'listar';
 }
 
 $controller = new UsuarioController();

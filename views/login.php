@@ -16,7 +16,7 @@
 <body>
     <div id="site">
         <figure>
-            <img src="images/logo.png" alt="Logo Markt Club">
+            <img src="./../images/logo.png" alt="Logo Markt Club">
         </figure>
         <form action="./../index.php?action=login" method="post">
             <legend>FAÇA SEU LOGIN</legend>

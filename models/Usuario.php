@@ -6,8 +6,7 @@ class Usuario extends CRUD
 {
     public function __construct()
     {
-        parent::__construct('usuario'); // Substitua 'tabela_usuarios' pelo nome da tabela de usuários no seu banco de dados
-
+        parent::__construct('usuario');
     }
 
     public function buscarPorId($id)

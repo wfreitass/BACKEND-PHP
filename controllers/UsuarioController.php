@@ -35,6 +35,11 @@ class UsuarioController
         }
 
         try {
+            $usuarioLogado = $_SESSION['usuario'];
+            $usuarioLogado['permissao'] = explode(',', $usuarioLogado['permissao']);
+            // print_r($usuarioLogado['permissao']);
+            // die();
+
             $paginaAtual = 1;
             if (isset($_GET['pagina'])) {
                 $paginaAtual = $_GET['pagina'];
@@ -61,6 +66,7 @@ class UsuarioController
         if ($_POST) {
             try {
                 $usuario = new Usuario();
+
 
                 if (
                     $usuario->buscarPorCpf($_POST['cpf']) ||
