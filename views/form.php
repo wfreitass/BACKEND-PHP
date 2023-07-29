@@ -19,7 +19,7 @@
             <a class="voltar" href="index.php"><img src="images/voltar.svg"></a>
             <h1 class="total">Salvar novo usuário</h1>
             <figure></figure>
-            <a class="sair" href="login.php">sair</a>
+            <a class="sair" href="views/login.php">sair</a>
         </header>
         <form action="?action=<?= isset($usuario['id']) ? "editar&id=" . $usuario['id'] : 'cadastrar' ?>  " method="post" class="cadastro">
             <div class="input">

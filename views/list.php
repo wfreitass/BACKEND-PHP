@@ -53,6 +53,15 @@
         </div>
         <a href="?action=cadastrar" class="botao_add">Adicionar novo</a>
     </div>
+    <script>
+        function confirmarExclusao() {
+            let confirme = confirm("Deseja excluir este item ");
+            if (confirme) {
+                alert("item excluido com sucesso")
+            }
+            return false;
+        }
+    </script>
 </body>
 
 </html>

@@ -40,15 +40,17 @@ class Usuario extends CRUD
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function validarCredenciais($email, $senha)
+    public function validarCredenciais($cpf, $senha)
     {
-        $sql = "SELECT * FROM {$this->tabela} WHERE email = :email AND senha = :senha";
+        $sql = "SELECT * FROM {$this->tabela} WHERE cpf = :cpf";
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(":email", $email);
-        $stmt->bindValue(":senha", $senha);
+        $stmt->bindValue(":cpf", $cpf);
         $stmt->execute();
-
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!password_verify($senha, $usuario['senha'])) {
+            return false;
+        }
+        return  $usuario;
     }
 }
 

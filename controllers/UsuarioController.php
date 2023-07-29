@@ -6,7 +6,16 @@ class UsuarioController
 {
     public function login()
     {
+        if ($_POST) {
 
+            $usuario = new Usuario();
+            $usuario = $usuario->validarCredenciais($_POST['login'], $_POST['senha']);
+            if (!$usuario) {
+                $mensagem = "Cedenciais Inválidas";
+                return header('Location: views/login.php');
+            }
+            return header('Location: index.php');
+        }
         require 'views/login.php';
     }
 

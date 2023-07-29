@@ -31,6 +31,10 @@ switch ($action) {
         $controller->editarUsuario();
         break;
 
+    case 'login':
+        $controller->login();
+        break;
+
     default:
         echo "Ação inválida.";
         break;

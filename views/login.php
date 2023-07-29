@@ -18,7 +18,7 @@
         <figure>
             <img src="images/logo.png" alt="Logo Markt Club">
         </figure>
-        <form action="./../index.php" method="post">
+        <form action="./../index.php?action=login" method="post">
             <legend>FAÇA SEU LOGIN</legend>
             <p>Digite seu CPF no campo abaixo e clique em logar para fazer seu login.</p>
 
