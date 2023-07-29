@@ -1,14 +1,16 @@
 <?php
 
+require_once "./db/Conexao.php";
+
 class CRUD
 {
 
-    private $conexao;
-    private $tabela;
+    protected $conexao;
+    protected $tabela;
 
-    public function __construct($conexao, $tabela)
+    public function __construct($tabela)
     {
-        $this->conexao = $conexao;
+        $this->conexao =  Conexao::getConexao();
         $this->tabela = $tabela;
     }
 

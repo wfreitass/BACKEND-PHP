@@ -7,9 +7,9 @@ class Conexao
     private function __construct()
     {
         $host = "localhost";
-        $usuario = "seu_usuario";
-        $senha = "sua_senha";
-        $banco = "seu_banco_de_dados"; 
+        $usuario = "root";
+        $senha = "";
+        $banco = "teste-backend";
 
         try {
             self::$conexao = new PDO("mysql:host={$host};dbname={$banco}", $usuario, $senha);
@@ -22,9 +22,9 @@ class Conexao
 
     public static function getConexao()
     {
-        // if (!self::$conexao) {
-        //     new self();
-        // }
+        if (!self::$conexao) {
+            new self();
+        }
 
         return self::$conexao;
     }
