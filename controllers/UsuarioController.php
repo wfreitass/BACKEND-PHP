@@ -13,8 +13,17 @@ class UsuarioController
     public function listarUsuarios()
     {
         try {
+            $paginaAtual = 1;
+            if (isset($_GET['pagina'])) {
+                $paginaAtual = $_GET['pagina'];
+            }
             $usuario = new Usuario();
-            $lista = $usuario->listar();
+            $resultadosPorPagina = 1;
+            $total = $usuario->total();
+            $totalPaginas = ceil($total / $resultadosPorPagina);
+            $resultado = $usuario->paginacao($paginaAtual, $resultadosPorPagina);
+
+            // $lista = $usuario->listar();
         } catch (Exception $e) {
             throw $e;
         }
@@ -75,6 +84,7 @@ class UsuarioController
                 $response = $usuario->atualizar($id, $_POST);
                 return header('Location: index.php');
             }
+            require 'views/form.php';
         } catch (Exception $e) {
             throw $e;
         }

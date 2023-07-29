@@ -67,4 +67,20 @@ abstract class CRUD
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function total()
+    {
+        $sql = "SELECT COUNT(*) AS total FROM {$this->tabela}";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC)[0]['total'];
+    }
+
+    public function paginacao($paginaAtual, $resultadosPorPagina)
+    {
+        $offset = ($paginaAtual - 1) * $resultadosPorPagina;
+        $sql = "SELECT * FROM {$this->tabela} LIMIT $resultadosPorPagina OFFSET {$offset}";
+        return $this->conexao->query($sql);
+    }
 }

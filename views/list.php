@@ -25,7 +25,6 @@
             <a class="sair" href="views/login.php">sair</a>
         </header>
         <ul>
-
             <li class="titulo">
                 <div class="texto nome">Nome</div>
                 <div class="texto cpf">CPF</div>
@@ -35,8 +34,7 @@
                 <div class="editar"></div>
                 <div class="deletar"></div>
             </li>
-
-            <?php foreach ($lista as $key => $value) : ?>
+            <?php while ($value = $resultado->fetch(PDO::FETCH_ASSOC)) : ?>
                 <li class="dado">
                     <div class="texto nome"><?= $value['nome'] ?></div>
                     <div class="texto cpf"><?= $value['cpf'] ?></div>
@@ -46,12 +44,12 @@
                     <div class="editar"><a href="?action=editar&id=<?= $value['id'] ?>"><img src="images/editar.svg"></a></div>
                     <div class="deletar"><a href="?action=excluir&id=<?= $value['id'] ?>"><img src="images/deletar.svg"></a></div>
                 </li>
-            <?php endforeach ?>
+            <?php endwhile ?>
         </ul>
         <div class="pagina">
-            <p class="resultado">4 resultados</p>
-            <a href="">Anterior</a>
-            <a href="">Próxima</a>
+            <p class="resultado"><?= $total ?> resultados</p>
+            <a href="?pagina=<?= $paginaAtual - 1 != 0 ?  $paginaAtual - 1 : $paginaAtual ?>">Anterior</a>
+            <a href="?pagina=<?= $paginaAtual + 1 > $totalPaginas ? $paginaAtual : $paginaAtual + 1  ?>">Próxima</a>
         </div>
         <a href="?action=cadastrar" class="botao_add">Adicionar novo</a>
     </div>
