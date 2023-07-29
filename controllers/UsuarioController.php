@@ -18,7 +18,7 @@ class UsuarioController
                 $paginaAtual = $_GET['pagina'];
             }
             $usuario = new Usuario();
-            $resultadosPorPagina = 1;
+            $resultadosPorPagina = 3;
             $total = $usuario->total();
             $totalPaginas = ceil($total / $resultadosPorPagina);
             $resultado = $usuario->paginacao($paginaAtual, $resultadosPorPagina);
@@ -78,6 +78,7 @@ class UsuarioController
             $usuario['permissao'] = explode(',', $usuario['permissao']);
 
             if ($_POST) {
+
                 $usuario = new Usuario();
                 $_POST['permissao'] = implode(',', $_POST['permissao']);
                 $_POST['senha'] = password_hash($_POST['senha'], PASSWORD_BCRYPT);

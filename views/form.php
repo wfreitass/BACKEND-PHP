@@ -24,19 +24,23 @@
         <form action="?action=<?= isset($usuario['id']) ? "editar&id=" . $usuario['id'] : 'cadastrar' ?>  " method="post" class="cadastro">
             <div class="input">
                 <label for="input_nome">Nome:</label>
-                <input type="text" id="input_nome" name="nome" placeholder="Digite um nome" value="<?= $usuario['nome'] ?? false  ?>">
+                <input type="text" id="input_nome" name="nome" placeholder="Digite um nome" value="<?= $usuario['nome'] ?? false  ?>" maxlength="255">
             </div>
             <div class="input">
                 <label for="input_cpf">CPF:</label>
-                <input type="text" id="input_cpf" name="cpf" placeholder="Digite um CPF" value="<?= $usuario['cpf'] ?? false  ?>">
+                <input type="text" id="input_cpf" name="cpf" placeholder="Digite um CPF" value="<?= $usuario['cpf'] ?? false  ?>" maxlength="12">
             </div>
             <div class="input">
                 <label for="input_email">E-mail:</label>
-                <input type="text" id="input_email" name="email" placeholder="Digite um e-mail" value="<?= $usuario['email'] ?? false  ?>">
+                <input type="text" id="input_email" name="email" placeholder="Digite um e-mail" value="<?= $usuario['email'] ?? false  ?>" maxlength="255">
             </div>
-            <div class="input">
+            <div class="input" id="div_senha">
                 <label for="input_senha">Senha:</label>
-                <input type="password" id="input_senha" name="senha" placeholder="Digite uma senha" value="<?= $usuario['email'] ?? false  ?>">
+                <input type="password" id="input_senha" name="senha" placeholder="Digite uma senha" value="<?= $usuario['senha'] ?? false  ?>" <?php isset($usuario['senha']) ? 'disabled' : false  ?> disabled>
+                <span>obs: todas as senhas do sistemas são encriptografadas para sua segurança</span> <br>
+                <?php if (isset($usuario['id'])) : ?>
+                    <span>*Clique duas vezes para alterar a senha</span>
+                <?php endif ?>
             </div>
 
             <div class="select">
@@ -75,6 +79,15 @@
             <button>SALVAR</button>
         </form>
     </div>
+
+    <script>
+        let senha = window.document.getElementById("div_senha");
+        console.log(senha);
+        senha.addEventListener("click", function() {
+            window.document.getElementById("input_senha").value = ""
+            window.document.getElementById("input_senha").removeAttribute("disabled");
+        });
+    </script>
 </body>
 
 </html>
