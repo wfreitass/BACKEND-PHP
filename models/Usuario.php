@@ -10,7 +10,6 @@ class Usuario extends CRUD
 
     }
 
-    // Métodos específicos da classe Usuario
     public function buscarPorId($id)
     {
         $sql = "SELECT * FROM {$this->tabela} WHERE id = :id";
@@ -21,7 +20,16 @@ class Usuario extends CRUD
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Métodos específicos da classe Usuario
+    public function buscarPorCpf($cpf)
+    {
+        $sql = "SELECT * FROM {$this->tabela} WHERE cpf = :cpf";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(":cpf", $cpf);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function buscarPorEmail($email)
     {
         $sql = "SELECT * FROM {$this->tabela} WHERE email = :email";
@@ -42,8 +50,6 @@ class Usuario extends CRUD
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
-    // Outros métodos específicos da classe Usuario
 }
 
 // // Exemplo de uso:

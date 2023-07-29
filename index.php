@@ -26,7 +26,10 @@ switch ($action) {
     case 'excluir':
         $controller->excluirUsuario();
         break;
-        // Outras ações aqui, se necessário
+
+    case 'editar':
+        $controller->editarUsuario();
+        break;
 
     default:
         echo "Ação inválida.";

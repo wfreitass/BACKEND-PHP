@@ -43,7 +43,7 @@
                     <div class="texto email"><?= $value['email'] ?></div>
                     <div class="texto data"><?= $value['data_criacao'] ?></div>
                     <div class="texto status"><?= $value['status'] ? "Ativado" : "Inativado" ?></div>
-                    <div class="editar"><a href="form.php"><img src="images/editar.svg"></a></div>
+                    <div class="editar"><a href="?action=editar&id=<?= $value['id'] ?>"><img src="images/editar.svg"></a></div>
                     <div class="deletar"><a href="?action=excluir&id=<?= $value['id'] ?>"><img src="images/deletar.svg"></a></div>
                 </li>
             <?php endforeach ?>
