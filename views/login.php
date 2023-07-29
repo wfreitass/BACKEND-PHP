@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="./../css/login.css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         <figure>
             <img src="images/logo.png" alt="Logo Markt Club">
         </figure>
-        <form action="index.php" method="post">
+        <form action="./../index.php" method="post">
             <legend>FAÇA SEU LOGIN</legend>
             <p>Digite seu CPF no campo abaixo e clique em logar para fazer seu login.</p>
 

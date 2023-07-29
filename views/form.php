@@ -21,7 +21,7 @@
             <figure></figure>
             <a class="sair" href="login.php">sair</a>
         </header>
-        <form action="" class="cadastro">
+        <form action="?action=cadastrar" method="post" class="cadastro">
             <div class="input">
                 <label for="input_nome">Nome:</label>
                 <input type="text" id="input_nome" name="nome" placeholder="Digite um nome">
@@ -42,9 +42,9 @@
             <div class="select">
                 <label for="input_status">Status</label>
                 <select name="status" id="input_status">
-                    <option value="">Escolha uma opção</option>
-                    <option value="ativo">Ativo</option>
-                    <option value="inativo">Inativo</option>
+                    <option selected disabled value="">Escolha uma opção</option>
+                    <option value="1">Ativo</option>
+                    <option value="0">Inativo</option>
                 </select>
                 <div class="seta"><img src="images/seta.svg" alt=""></div>
             </div>
@@ -72,7 +72,6 @@
                     <label for="input_permissao_usuario_deletar">Deletar usuário</label>
                 </div>
             </div>
-
             <button>SALVAR</button>
         </form>
     </div>

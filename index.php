@@ -14,6 +14,7 @@ if (isset($_GET['action'])) {
 $controller = new UsuarioController();
 
 switch ($action) {
+
     case 'listar':
         $controller->listarUsuarios();
         break;
@@ -22,6 +23,9 @@ switch ($action) {
         $controller->cadastrarUsuario();
         break;
 
+    case 'excluir':
+        $controller->excluirUsuario();
+        break;
         // Outras ações aqui, se necessário
 
     default:

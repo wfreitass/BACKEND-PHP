@@ -4,24 +4,47 @@ require_once "./models/Usuario.php";
 
 class UsuarioController
 {
+    public function login()
+    {
+
+        require 'views/login.php';
+    }
+
     public function listarUsuarios()
     {
-        // $conexao = ConexaoSingleton::getConexao();
-        $usuario = new Usuario();
-        $lista = $usuario->listar();
-        // $usuarios = $usuario->listar();
+        try {
+            $usuario = new Usuario();
+            $lista = $usuario->listar();
+        } catch (Exception $e) {
+            throw $e;
+        }
 
-        // Exibir a lista de usuários usando a view adequada
         require 'views/list.php';
     }
 
     public function cadastrarUsuario()
     {
-        // Lógica para cadastrar um novo usuário
-        // ...
-        // Exibir o formulário de cadastro usando a view adequada
+        if ($_POST) {
+            try {
+                $usuario = new Usuario();
+                $_POST['permissao'] = implode(',', $_POST['permissao']);
+                $_POST['senha'] = password_hash($_POST['senha'], PASSWORD_BCRYPT);
+                $response = $usuario->criar($_POST);
+            } catch (Exception $e) {
+                throw $e;
+            }
+        }
         require 'views/form.php';
     }
 
-    // Outras ações do usuário aqui, se necessário
+    public function excluirUsuario()
+    {
+        try {
+            $id = $_GET['id'];
+            $usuario = new Usuario();
+            $response = $usuario->deletar($id);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
 }

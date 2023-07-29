@@ -22,9 +22,10 @@
                 <input type="text" name="pesquisa" placeholder="Pesquisar...">
             </form>
             <figure></figure>
-            <a class="sair" href="login.php">sair</a>
+            <a class="sair" href="views/login.php">sair</a>
         </header>
         <ul>
+
             <li class="titulo">
                 <div class="texto nome">Nome</div>
                 <div class="texto cpf">CPF</div>
@@ -34,49 +35,25 @@
                 <div class="editar"></div>
                 <div class="deletar"></div>
             </li>
-            <li class="dado">
-                <div class="texto nome">Nome do usuário</div>
-                <div class="texto cpf">000.000.000-00</div>
-                <div class="texto email">email@dominio.com.br</div>
-                <div class="texto data">10/10/2021</div>
-                <div class="texto status">Ativo</div>
-                <div class="editar"><a href="form.php"><img src="images/editar.svg"></a></div>
-                <div class="deletar"><img src="images/deletar.svg"></div>
-            </li>
-            <li class="dado">
-                <div class="texto nome">Nome do usuário</div>
-                <div class="texto cpf">000.000.000-00</div>
-                <div class="texto email">email@dominio.com.br</div>
-                <div class="texto data">10/10/2021</div>
-                <div class="texto status">Ativo</div>
-                <div class="editar"><a href="form.php"><img src="images/editar.svg"></a></div>
-                <div class="deletar"><img src="images/deletar.svg"></div>
-            </li>
-            <li class="dado">
-                <div class="texto nome">Nome do usuário</div>
-                <div class="texto cpf">000.000.000-00</div>
-                <div class="texto email">email@dominio.com.br</div>
-                <div class="texto data">10/10/2021</div>
-                <div class="texto status">Ativo</div>
-                <div class="editar"><a href="form.php"><img src="images/editar.svg"></a></div>
-                <div class="deletar"><img src="images/deletar.svg"></div>
-            </li>
-            <li class="dado">
-                <div class="texto nome">Nome do usuário</div>
-                <div class="texto cpf">000.000.000-00</div>
-                <div class="texto email">email@dominio.com.br</div>
-                <div class="texto data">10/10/2021</div>
-                <div class="texto status">Ativo</div>
-                <div class="editar"><a href="form.php"><img src="images/editar.svg"></a></div>
-                <div class="deletar"><img src="images/deletar.svg"></div>
-            </li>
+
+            <?php foreach ($lista as $key => $value) : ?>
+                <li class="dado">
+                    <div class="texto nome"><?= $value['nome'] ?></div>
+                    <div class="texto cpf"><?= $value['cpf'] ?></div>
+                    <div class="texto email"><?= $value['email'] ?></div>
+                    <div class="texto data"><?= $value['data_criacao'] ?></div>
+                    <div class="texto status"><?= $value['status'] ? "Ativado" : "Inativado" ?></div>
+                    <div class="editar"><a href="form.php"><img src="images/editar.svg"></a></div>
+                    <div class="deletar"><a href="?action=excluir&id=<?= $value['id'] ?>"><img src="images/deletar.svg"></a></div>
+                </li>
+            <?php endforeach ?>
         </ul>
         <div class="pagina">
             <p class="resultado">4 resultados</p>
             <a href="">Anterior</a>
             <a href="">Próxima</a>
         </div>
-        <a href="form.php" class="botao_add">Adicionar novo</a>
+        <a href="?action=cadastrar" class="botao_add">Adicionar novo</a>
     </div>
 </body>
 

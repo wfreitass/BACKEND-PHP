@@ -2,7 +2,7 @@
 
 require_once "./db/Conexao.php";
 
-class CRUD
+abstract class CRUD
 {
 
     protected $conexao;
@@ -16,6 +16,7 @@ class CRUD
 
     public function criar($dados)
     {
+        $dados['data_criacao'] = date("Y-m-d");
         $campos = implode(', ', array_keys($dados));
         $valores = ':' . implode(', :', array_keys($dados));
 
@@ -31,6 +32,7 @@ class CRUD
 
     public function atualizar($id, $dados)
     {
+        $dados['data_atualizacao'] = date("Y-m-d");
         $valores = '';
         foreach ($dados as $campo => $valor) {
             $valores .= "{$campo} = :{$campo}, ";
