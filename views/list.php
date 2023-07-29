@@ -22,7 +22,7 @@
                 <input type="text" name="pesquisa" placeholder="Pesquisar...">
             </form>
             <figure></figure>
-            <a class="sair" href="views/login.php?action=logout">sair</a>
+            <a class="sair" href="?action=logout">sair</a>
         </header>
         <ul>
             <li class="titulo">

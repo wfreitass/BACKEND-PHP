@@ -25,6 +25,7 @@ class UsuarioController
         session_start();
         session_unset();
         session_destroy();
+        return header('Location: views/login.php');
     }
 
     public function listarUsuarios()
@@ -133,7 +134,13 @@ class UsuarioController
 
     public function pesquisa()
     {
+        session_start();
+        if (!$_SESSION['usuario']) {
+            return header('Location: views/login.php');
+        }
         try {
+            $usuarioLogado = $_SESSION['usuario'];
+            $usuarioLogado['permissao'] = explode(',', $usuarioLogado['permissao']);
             $paginaAtual = 1;
             if (isset($_GET['pagina'])) {
                 $paginaAtual = $_GET['pagina'];
