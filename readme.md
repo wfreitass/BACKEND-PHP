@@ -4,4 +4,4 @@
 
 ## Desafio Back-End
 
-- As senhas do sistemas são encritografadas rode o arquivo tabelas.sql, la terá um insert para usuário inicial;
+- As senhas do sistemas são encritografadas rode o arquivo tabelas.sql, la terá um insert para usuário inicial(06472836123, 123456);
