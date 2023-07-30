@@ -31,8 +31,12 @@
                 <div class="texto email">E-MAIL</div>
                 <div class="texto data">DATA</div>
                 <div class="texto status">STATUS</div>
-                <div class="editar"></div>
-                <div class="deletar"></div>
+                <?php if (in_array('usuario_add', $usuarioLogado['permissao'])) : ?>
+                    <div class="editar"></div>
+                <?php endif ?>
+                <?php if (in_array('usuario_deletar', $usuarioLogado['permissao'])) : ?>
+                    <div class="deletar"></div>
+                <?php endif ?>
             </li>
             <?php while ($value = $resultado->fetch(PDO::FETCH_ASSOC)) : ?>
                 <li class="dado">

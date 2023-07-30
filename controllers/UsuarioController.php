@@ -10,8 +10,8 @@ class UsuarioController
             $usuario = new Usuario();
             $usuario = $usuario->validarCredenciais($_POST['login'], $_POST['senha']);
             if (!$usuario) {
-                $mensagem = "Cedenciais Inválidas";
-                return header('Location: views/login.php');
+
+                return header('Location: views/login.php?alert=invalid');
             }
             session_start();
             $_SESSION['usuario'] = $usuario;

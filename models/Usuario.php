@@ -46,7 +46,7 @@ class Usuario extends CRUD
         $stmt->bindValue(":cpf", $cpf);
         $stmt->execute();
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (!password_verify($senha, $usuario['senha'])) {
+        if (!$usuario || !password_verify($senha, $usuario['senha'])) {
             return false;
         }
         return  $usuario;

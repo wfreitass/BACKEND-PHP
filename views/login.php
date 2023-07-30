@@ -23,13 +23,17 @@
             <p>Digite seu CPF no campo abaixo e clique em logar para fazer seu login.</p>
 
             <div class="input">
-                <input type="text" id="input_login" placeholder="CPF" inputmode="numeric" name="login">
+                <input type="number" id="input_login" placeholder="CPF" inputmode="numeric" name="login">
                 <label for="input_login">CPF</label>
             </div>
             <div class="input">
                 <input type="password" id="input_senha" placeholder="Senha" inputmode="numeric" name="senha">
                 <label for="input_senha">Senha</label>
             </div>
+
+            <?php if ($_GET['alert']) : ?>
+                <p>Credenciais inválidas</p>
+            <?php endif ?>
 
             <button>LOGAR</button>
         </form>
