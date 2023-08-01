@@ -24,4 +24,4 @@ ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
-INSERT INTO `usuario`( `uuid`, `nome`, `cpf`, `email`, `senha`, `permissao`, `data_criacao`,  `status`) VALUES ('backend_64c598a887439','wiltter','06472836123','wiltter@gmail.com','$2y$10$4bs0IGwaaNvxkM7frDtL5eJNf5UsJFdM7.goaI6TCQqSB1ST.BlNy','login,usuario_add',now(),'true')
+INSERT INTO `usuario`( `uuid`, `nome`, `cpf`, `email`, `senha`, `permissao`, `data_criacao`,  `status`) VALUES ('backend_64c598a887439','wiltter','06472836123','wiltter@gmail.com','$2y$10$4bs0IGwaaNvxkM7frDtL5eJNf5UsJFdM7.goaI6TCQqSB1ST.BlNy','login,usuario_add,usuario_editar,usuario_deletar',now(),'true')

@@ -78,7 +78,9 @@ class UsuarioController
                     return true;
                 }
 
-                $_POST['permissao'] = implode(',', $_POST['permissao']);
+                if ($_POST['permissao']) {
+                    $_POST['permissao'] = implode(',', $_POST['permissao']);
+                }
                 $_POST['senha'] = password_hash($_POST['senha'], PASSWORD_BCRYPT);
                 $_POST['uuid'] = uniqid('backend_');
                 $response = $usuario->criar($_POST);

@@ -31,7 +31,7 @@
                 <label for="input_senha">Senha</label>
             </div>
 
-            <?php if ($_GET['alert']) : ?>
+            <?php if (isset($_GET['alert'])) : ?>
                 <p>Credenciais inválidas</p>
             <?php endif ?>
 

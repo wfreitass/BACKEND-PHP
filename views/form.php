@@ -24,19 +24,19 @@
         <form action="?action=<?= isset($usuario['id']) ? "editar&id=" . $usuario['id'] : 'cadastrar' ?>  " method="post" class="cadastro">
             <div class="input">
                 <label for="input_nome">Nome:</label>
-                <input type="text" id="input_nome" name="nome" placeholder="Digite um nome" value="<?= $usuario['nome'] ?? false  ?>" maxlength="255">
+                <input type="text" id="input_nome" name="nome" placeholder="Digite um nome" value="<?= $usuario['nome'] ?? false  ?>" maxlength="255" required>
             </div>
             <div class="input">
                 <label for="input_cpf">CPF:</label>
-                <input type="text" id="input_cpf" name="cpf" placeholder="Digite um CPF" value="<?= $usuario['cpf'] ?? false  ?>" maxlength="12">
+                <input type="text" id="input_cpf" name="cpf" placeholder="Digite um CPF" value="<?= $usuario['cpf'] ?? false  ?>" maxlength="12" required>
             </div>
             <div class="input">
                 <label for="input_email">E-mail:</label>
-                <input type="text" id="input_email" name="email" placeholder="Digite um e-mail" value="<?= $usuario['email'] ?? false  ?>" maxlength="255">
+                <input type="text" id="input_email" name="email" placeholder="Digite um e-mail" value="<?= $usuario['email'] ?? false  ?>" maxlength="255" required>
             </div>
             <div class="input" id="div_senha">
                 <label for="input_senha">Senha:</label>
-                <input type="password" id="input_senha" name="senha" placeholder="Digite uma senha" value="<?= $usuario['senha'] ?? false  ?>" <?php isset($usuario['senha']) ? 'disabled' : false  ?> disabled>
+                <input type="password" id="input_senha" name="senha" placeholder="Digite uma senha" value="<?= $usuario['senha'] ?? false  ?>" <?php isset($usuario['senha']) ? 'disabled' : false  ?> required>
                 <span>obs: todas as senhas do sistemas são encriptografadas para sua segurança</span> <br>
                 <?php if (isset($usuario['id'])) : ?>
                     <span>*Clique duas vezes para alterar a senha</span>
@@ -45,7 +45,7 @@
 
             <div class="select">
                 <label for="input_status">Status</label>
-                <select name="status" id="input_status">
+                <select name="status" id="input_status" required>
                     <option <?= isset($usuario) ? false : 'selected' ?> disabled value="">Escolha uma opção</option>
                     <option <?= isset($usuario) ? ($usuario['status'] == true ? 'selected' : false) : false  ?> value="1">Ativo</option>
                     <option <?= isset($usuario) ? ($usuario['status'] == false ? 'selected' : false) : false  ?> value="0">Inativo</option>
